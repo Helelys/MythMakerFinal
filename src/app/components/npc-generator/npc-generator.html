@@ -1,0 +1,22 @@
+<div class="npcs-gerador">
+<button (click)="gerarNPC()">Gerar NPC</button>
+<button (click)="deletarNPC()">Deletar NPC</button>
+
+@if (mostrarAtributos) {
+<div class="npc-atributos">
+  <p>Nome: {{ nome }} {{ sobrenome }}</p>
+  
+  <div class="atributos">
+    <p>Força: {{ forca }}</p>
+    <p>Destreza: {{ destreza }}</p>
+    <p>Vigor: {{ vigor }}</p>
+    <p>Inteligência: {{ inteligencia }}</p>
+    <p>Presença: {{ presenca }}</p>
+  </div>
+  
+  <p>Perícias: {{pericia}}</p>
+  <p>Cargo: {{cargo}}</p>
+  <p>Personalidade: {{ personalidade }} e {{ personalidade2 }}</p>
+  </div>
+}
+</div>
