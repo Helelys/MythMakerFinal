@@ -3,13 +3,26 @@
     <button (click)="deletarMissao()">Deletar Missão</button>
     @if (exiberMissao) {
     <div class="missoes">
-        <p>{{ informante }}</p>
-        <p>{{ responsavel }}</p>
-        <p>{{ acao1 }}</p>
-        <p>{{ acao2 }}</p>
-        <p>{{ local }}</p>
-        <p>{{ situacao }}</p>
-        <p>{{ estado }}</p>
+        <table>
+        <tr>
+            <th>Informante</th>
+            <th>Responsável</th>
+            <th>Ação 1</th>
+            <th>Ação 2</th>
+            <th>Local</th>
+            <th>Situação</th>
+            <th>Estado</th>
+        </tr>
+        <tr>
+            <td>{{ informante }}</td>
+            <td>{{ responsavel }}</td>
+            <td>{{ acao1 }}</td>
+            <td>{{ acao2 }}</td>
+            <td>{{ local }}</td>
+            <td>{{ situacao }}</td>
+            <td>{{ estado }}</td>
+        </tr>
+        </table>
     </div>
     }
 </section>
