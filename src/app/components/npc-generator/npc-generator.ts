@@ -21,6 +21,7 @@ export class NpcGenerator {
   personalidade2: any;
   pericia: any;
   cargo: any;
+  idade: any;
   
   nomes: string[] = [
             "João", "Gabriel", "Lucas", "Mateus", "Pedro",
@@ -74,6 +75,7 @@ export class NpcGenerator {
     this.gerarPersonalidade();
     this.gerarPericia();
     this.gerarOcupacao();
+    this.gerarIdade();
   }
 
   deletarNPC() {
@@ -136,4 +138,8 @@ export class NpcGenerator {
     return this.ocupacao;
   }
   
+  private gerarIdade() {
+    this.idade = Math.floor(Math.random() * 60) + 18;
+    return this.idade;
+  }
 }

@@ -1,0 +1,15 @@
+<section>
+    <button (click)="gerarMissao()">Gerar Missão</button>
+    <button (click)="deletarMissao()">Deletar Missão</button>
+    @if (exiberMissao) {
+    <div class="missoes">
+        <p>{{ informante }}</p>
+        <p>{{ responsavel }}</p>
+        <p>{{ acao1 }}</p>
+        <p>{{ acao2 }}</p>
+        <p>{{ local }}</p>
+        <p>{{ situacao }}</p>
+        <p>{{ estado }}</p>
+    </div>
+    }
+</section>
