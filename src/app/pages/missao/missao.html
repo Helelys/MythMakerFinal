@@ -1,1 +1,15 @@
-<app-missao-gerador></app-missao-gerador>
+<section>
+    <h1>Missão</h1>
+    <button (click)="gerarOrdem()">Missão de Ordem Paranormal</button>
+    <button (click)="gerarDnD()">Missão de D&D</button>
+</section>
+<div>
+@if (tipo === "ordem") {
+  <app-missao-gerador></app-missao-gerador>
+}
+</div>
+<div>
+@if (tipo === "dnd") {
+  <app-missao-gerador-dnd></app-missao-gerador-dnd>
+}
+</div>

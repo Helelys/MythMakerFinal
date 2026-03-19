@@ -1,0 +1,73 @@
+section {
+    background-color: #000814;
+    color: #ced4da;
+    font-size: 1.2em;
+
+    width: 100%;
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+
+    text-align: center;
+}
+
+.missoes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding-top: 3em;
+}
+
+table {
+    width: max-content;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 0.6em 1em;
+    white-space: nowrap;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    section {
+        font-size: 1.3em;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+    section {
+        font-size: 1.4em;
+    }
+}
+
+button {
+  background-color: rgb(125, 119, 119);
+  border: none;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 1em;
+  font-size: 16px;
+  cursor: pointer;
+
+  height: 3em;
+  width: 10em;
+}

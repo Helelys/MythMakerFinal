@@ -1,0 +1,29 @@
+<section>
+    <button (click)="gerarMissao()">Gerar Missão</button>
+    <button (click)="deletarMissao()">Deletar Missão</button>
+    <h2>Missão - D&D</h2>
+    @if (exiberMissao) { 
+    <div class="missoes">
+        <table>
+        <tr>
+            <th>Objetivo</th>
+            <th>Contratante</th>
+            <th>Classe Social</th>
+            <th>Motivação</th>
+            <th>Local</th>
+            <th>Situação</th>
+            <th>Recompensa</th>
+        </tr>
+        <tr>
+            <td>{{objetivo}}</td>
+            <td>{{contratanteNome}}</td>
+            <td>{{classeSocial}}</td>
+            <td>{{motivacao}}</td>
+            <td>{{local}}</td>
+            <td>{{situacao}}</td>
+            <td>{{recompensa}}</td>
+        </tr>
+        </table>
+    </div>
+    }
+</section>
