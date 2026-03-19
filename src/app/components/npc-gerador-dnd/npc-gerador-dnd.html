@@ -1,0 +1,32 @@
+<section>
+    <button (click)="gerarNpc()">Gerar NPC</button>
+    <button (click)="deletarNpc()">Deletar NPC</button>
+    @if (deletar) {    
+    <table>
+        <tr>
+            <th>Força</th>
+            <th>Destreza</th>
+            <th>Constituição</th>
+            <th>Inteligência</th>
+            <th>Sabedoria</th>
+            <th>Carisma</th>
+        </tr>
+        <tr>
+            <td>{{ forca }}</td>
+            <td>{{ destreza }}</td>
+            <td>{{ constituicao }}</td>
+            <td>{{ inteligencia }}</td>
+            <td>{{ sabedoria }}</td>
+            <td>{{ carisma }}</td>
+        </tr>
+        <tr>
+            <td>{{ bonusForca }}</td>
+            <td>{{ bonusDestreza }}</td>
+            <td>{{ bonusConstituicao }}</td>
+            <td>{{ bonusInteligencia }}</td>
+            <td>{{ bonusSabedoria }}</td>
+            <td>{{ bonusCarisma }}</td>
+        </tr>
+    </table>  
+    }
+</section>
