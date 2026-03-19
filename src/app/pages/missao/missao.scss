@@ -1,0 +1,65 @@
+section {
+  background-color: #000814;
+  color: #ced4da;
+  font-size: 1.2em;
+
+  width: 100%;
+  min-height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 2em;
+
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+button {
+  background-color: #1c2541;
+  border: none;
+  color: #fff;
+
+  width: 100%;
+  max-width: 280px;
+  height: 3em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #3a506b;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  section {
+    font-size: 1.3em;
+  }
+
+  button {
+    max-width: 320px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  section {
+    font-size: 1.4em;
+  }
+
+  button {
+    max-width: 360px;
+  }
+}
