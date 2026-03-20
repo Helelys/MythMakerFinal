@@ -1,0 +1,63 @@
+section {
+    background-color: #000814;
+    color: #ced4da;
+    font-size: 1.2em;
+
+    width: 100%;
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+
+    text-align: center;
+}
+
+button {
+    background-color: rgb(125, 119, 119);
+    border: none;
+    color: white;
+    padding: 0.8em 1.5em;
+    cursor: pointer;
+
+    height: 3em;
+    width: 10em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    section {
+        font-size: 1.3em;
+    }
+
+    table {
+        width: 80%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+    section {
+        font-size: 1.4em;
+    }
+
+    table {
+        width: 60%;
+    }
+}
