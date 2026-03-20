@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Host, HostListener } from '@angular/core';
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -9,4 +9,20 @@ import { RouterLink } from "@angular/router";
 })
 export class Header {
 
+  isOpen: boolean = false;
+
+  toggleMenu() {
+    this.isOpen = !this.isOpen;
+    const mudar = document.querySelector('.sidebar')?.classList.toggle('isOpen', this.isOpen);
+    return mudar;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+  const target = event.target as HTMLElement;
+
+  if (this.isOpen && !target.closest('.sidebar')) {
+    this.toggleMenu();
+  }
+}
 }
