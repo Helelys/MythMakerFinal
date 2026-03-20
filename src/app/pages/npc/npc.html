@@ -1,2 +1,12 @@
-<app-npc-generator></app-npc-generator>
-<app-npc-gerador-dnd></app-npc-gerador-dnd>
+<select id="select" (change)="onChange($event)">
+    <option value="">Selecione um sistema</option>
+    <option value="ordem">Ordem</option>
+    <option value="dnd">Dungeons & Dragons</option>
+</select>
+@if (seletor === 'ordem') {
+    <app-npc-generator></app-npc-generator>
+} @else if (seletor === 'dnd') {
+    <app-npc-gerador-dnd></app-npc-gerador-dnd>
+} @else if (seletor === '') {
+    <p>Selecione um sistema para gerar um NPC</p>
+}

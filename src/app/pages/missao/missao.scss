@@ -1,65 +1,52 @@
-section {
+/* remove fundo branco da página */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-color: #000814;
-  color: #ced4da;
-  font-size: 1.2em;
+}
 
-  width: 100%;
-  min-height: 50vh;
-
+/* ocupa 100% da tela */
+:host {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.5em;
-  padding: 2em;
-
-  text-align: center;
-}
-
-h1 {
-  font-size: 1.8em;
-}
-
-button {
-  background-color: #1c2541;
-  border: none;
-  color: #fff;
-
+  justify-content: flex-start;
+  min-height: 100vh;
   width: 100%;
-  max-width: 280px;
+  background-color: #000814;
+  padding: 2em 1em;
+  box-sizing: border-box;
+}
+
+/* select centralizado */
+select {
+  width: 100%;
+  max-width: 350px;
   height: 3em;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #1c2541;
+  color: #fff;
+  border: none;
+  outline: none;
 
+  padding: 0 1em;
   font-size: 1em;
   cursor: pointer;
-  transition: 0.2s;
+
+  border-radius: 4px;
+  margin-bottom: 2em;
 }
 
-button:hover {
-  background-color: #3a506b;
+/* conteúdo (npc generator) ocupar espaço */
+app-npc-generator,
+app-npc-gerador-dnd {
+  width: 100%;
+  max-width: 900px;
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-  section {
-    font-size: 1.3em;
-  }
-
-  button {
-    max-width: 320px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  section {
-    font-size: 1.4em;
-  }
-
-  button {
-    max-width: 360px;
-  }
+/* texto */
+p {
+  color: #adb5bd;
+  margin-top: 2em;
 }

@@ -9,15 +9,17 @@ import { MissaoGeradorDnd } from '../../components/missao-gerador-dnd/missao-ger
   styleUrl: './missao.scss',
 })
 export class Missao {
-  
-  tipo: any;
+  seletor: string = '';
 
-  public gerarOrdem() {
-    this.tipo = 'ordem';
+  onChange(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+
+    if (value === 'ordem') {
+      this.seletor = 'ordem';
+    } else if (value === 'dnd') {
+      this.seletor = 'dnd';
+    } else {
+      this.seletor = '';
+    }
   }
-
-  public gerarDnD() {
-    this.tipo = 'dnd';
-  }
-
 }

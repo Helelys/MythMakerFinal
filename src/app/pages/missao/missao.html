@@ -1,15 +1,12 @@
-<section>
-    <h1>Missão</h1>
-    <button (click)="gerarOrdem()">Missão de Ordem Paranormal</button>
-    <button (click)="gerarDnD()">Missão de D&D</button>
-</section>
-<div>
-@if (tipo === "ordem") {
-  <app-missao-gerador></app-missao-gerador>
+<select id="select" (change)="onChange($event)">
+    <option value="">Selecione um sistema</option>
+    <option value="ordem">Ordem</option>
+    <option value="dnd">Dungeons & Dragons</option>
+</select>
+@if (seletor === 'ordem') {
+    <app-missao-gerador></app-missao-gerador>
+} @else if (seletor === 'dnd') {
+    <app-missao-gerador-dnd></app-missao-gerador-dnd>
+} @else if (seletor === '') {
+    <p>Selecione um sistema para gerar uma missão</p>
 }
-</div>
-<div>
-@if (tipo === "dnd") {
-  <app-missao-gerador-dnd></app-missao-gerador-dnd>
-}
-</div>
