@@ -4,26 +4,13 @@
     <h2>Missão - Ordem Paranormal</h2>
     @if (exiberMissao) {
     <div class="missoes">
-        <table>
-        <tr>
-            <th>Informante</th>
-            <th>Responsável</th>
-            <th>Ação 1</th>
-            <th>Ação 2</th>
-            <th>Local</th>
-            <th>Situação</th>
-            <th>Estado</th>
-        </tr>
-        <tr>
-            <td>{{ informante }}</td>
-            <td>{{ responsavel }}</td>
-            <td>{{ acao1 }}</td>
-            <td>{{ acao2 }}</td>
-            <td>{{ local }}</td>
-            <td>{{ situacao }}</td>
-            <td>{{ estado }}</td>
-        </tr>
-        </table>
+        <p>Informante: {{ informante }}</p>
+        <p>Responsável: {{ responsavel }}</p>
+        <p>Ação 1: {{ acao1 }}</p>
+        <p>Ação 2: {{ acao2 }}</p>
+        <p>Local: {{ local }}</p>
+        <p>Situação: {{ situacao }}</p>
+        <p>Estado: {{ estado }}</p>
     </div>
     }
 </section>
