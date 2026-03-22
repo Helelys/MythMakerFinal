@@ -16,6 +16,7 @@ export class NpcGeradorDnd {
   inteligencia: any;
   sabedoria: any
   carisma: any;
+  classe: any;
 
   deletar: boolean = false;
 
@@ -141,7 +142,7 @@ export class NpcGeradorDnd {
     } else if (this.constituicao == 20) {
       this.bonusConstituicao = 5;
     }
-   }
+  }
 
    private calcularBonusInteligencia() { 
     if (this.inteligencia == 1) {
@@ -167,7 +168,7 @@ export class NpcGeradorDnd {
     } else if (this.inteligencia == 20) {
       this.bonusInteligencia = 5;
     }
-   }
+  }
 
     private calcularBonusSabedoria() {
     if (this.sabedoria == 1) {
@@ -193,7 +194,7 @@ export class NpcGeradorDnd {
     } else if (this.sabedoria == 20) {
       this.bonusSabedoria = 5;
     }
-   }
+  }
 
     private calcularBonusCarisma() {
     if (this.carisma == 1) {
@@ -219,7 +220,7 @@ export class NpcGeradorDnd {
     } else if (this.carisma == 20) {
       this.bonusCarisma = 5;
     }
-   }
+  }
 
    private calculaTodosBonus() {
     this.calcularBonusForca();
@@ -228,7 +229,7 @@ export class NpcGeradorDnd {
     this.calcularBonusInteligencia();
     this.calcularBonusSabedoria();
     this.calcularBonusCarisma();
-   }
+  }
 
    private gerarNomes() {
     const nomes: string[] = [
@@ -259,7 +260,7 @@ export class NpcGeradorDnd {
     const nome = nomes[Math.floor(Math.random() * nomes.length)];
     const sobrenome = sobrenomesMedievais[Math.floor(Math.random() * sobrenomesMedievais.length)];
     return this.nome = `${nome} ${sobrenome}`;
-   }
+  }
 
    private gerarEspecies() {
     const especies: string[] = [
@@ -268,7 +269,16 @@ export class NpcGeradorDnd {
     ]
 
     return this.especie = especies[Math.floor(Math.random() * especies.length)];
-   }
+  }
+
+  private gerarClasse() {
+    const classes: string[] = [
+      "Bárbaro", "Bardo", "Clérigo", "Druida", "Feiticeiro",
+      "Guardião", "Guerreiro", "Ladino", "Mago", "Monge", "Paladino"
+    ]
+
+    return this.classe = classes[Math.floor(Math.random() * classes.length)];
+  }
 
   gerarNpc() {
     this.deletar = true;
@@ -277,6 +287,7 @@ export class NpcGeradorDnd {
     this.calculaTodosBonus();
     this.gerarNomes();
     this.gerarEspecies();
+    this.gerarClasse();
   }
 
   deletarNpc() {
