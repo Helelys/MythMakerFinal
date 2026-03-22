@@ -18,6 +18,8 @@ export class NpcGeradorDnd {
   carisma: any;
   classe: any;
 
+  pontosDeVida: any;
+
   deletar: boolean = false;
 
   bonusForca: any;
@@ -27,9 +29,8 @@ export class NpcGeradorDnd {
   bonusSabedoria: any
   bonusCarisma: any;
 
-  pericia1: any;
-  pericia2: any;
-  pericia3: any;
+  pericias: any;
+
 
   private gerarAtributos() {
     this.forca = Math.floor(Math.random() * 20) + 1;
@@ -41,7 +42,19 @@ export class NpcGeradorDnd {
   }
 
   private gerarPericias() {
-    const pericias: string[] = [
+    if (this.classe === "Bárbaro") {
+      const pericias = ["Atletismo", "Intimidação", "Lidar com Animais", "Natureza", "Percepção", "Sobrevivência"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      } 
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+    } else if (this.classe === "Bardo") {
+      const pericias: string[] = [
       "Acrobacia - Destreza", "Arcanismo - Inteligência", 
       "Atletismo - Força", "Atuação - Carisma",
       "Enganação - Carisma", "Furtividade - Destreza",
@@ -51,18 +64,154 @@ export class NpcGeradorDnd {
       "Natureza - Inteligência", "Percepção - Sabedoria",
       "Persuasão - Carisma", "Prestidigitação - Destreza",
       "Religião - Inteligência", "Sobrevivência - Sabedoria"
-    ];
+      ];
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
 
-    this.pericia1 = pericias[Math.floor(Math.random() * pericias.length)];
-    this.pericia2 = pericias[Math.floor(Math.random() * pericias.length)];
-    this.pericia3 = pericias[Math.floor(Math.random() * pericias.length)];
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      } else if (pericias1 === pericias3) {
+        pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+      } else if (pericias2 === pericias3) {
+        pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
 
-    if (this.pericia1 === this.pericia2) {
-      this.pericia2 = pericias[Math.floor(Math.random() * pericias.length)];
-    } else if (this.pericia1 === this.pericia3) {
-      this.pericia3 = pericias[Math.floor(Math.random() * pericias.length)];
-    } else if (this.pericia2 === this.pericia3) {
-      this.pericia3 = pericias[Math.floor(Math.random() * pericias.length)];
+      this.pericias = `${pericias1}, ${pericias2}, ${pericias3}`;
+    } else if (this.classe === "Bruxo") {
+      const pericias = ["Arcanismo", "Enganação", "História", "Intimidação", "Investigação", "Religião", "Natureza"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+     } else if (this.classe === "Clérigo") {
+      const pericias = ["História", "Intuição", "Medicina", "Persuasão", "Religião"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+    } else if (this.classe === "Druida") {
+      const pericias = ["Arcanismo", "Lidar com Animais", "Intuição", "Medicina", "Natureza", "Percepção", "Religião", "Sobrevivência"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+
+    } else if (this.classe === "Feiticeiro") {
+      const pericias = ["Arcanismo", "Enganação", "Intimidação", "Intuição", "Persuasão", "Religião"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+      } else if (this.classe === "Guardião") {
+        const pericias = ["Atletismo", "Furtividade", "Intuição", "Investigação", "Lidar com Animais", "Natureza", "Percepção", "Sobrevivência"]
+
+        let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+        let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+        let pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+
+        if (pericias1 === pericias2) {
+          pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+        } else if (pericias1 === pericias3) {
+          pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+        } else if (pericias2 === pericias3) {
+          pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+        }
+
+        this.pericias = `${pericias1}, ${pericias2}, ${pericias3}`;
+    } else if (this.classe === "Guerreiro") {
+      const pericias = ["Acrobacia", "Atletismo", "Intimidação", "História", "Intuição", "Lidar com Animais", "Percepção", "Persuasão", "Sobrevivência"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+    } else if (this.classe === "Ladino") {
+      const pericias = ["Acrobacia", "Atletismo", "Enganação", "Furtividade", "Intimidação", "Intuição", "Investigação", "Percepção", "Persuasão", "Prestidigitação"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias4 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+      if (pericias1 === pericias3) {
+        pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+      if (pericias1 === pericias4) {
+        pericias4 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+      if (pericias2 === pericias3) {
+        pericias3 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+      if (pericias2 === pericias4) {
+        pericias4 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+      if (pericias3 === pericias4) {
+        pericias4 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}, ${pericias3}, ${pericias4}`;
+
+    } else if (this.classe === "Mago") {
+      const pericias = ["Arcanismo", "História", "Intuição", "Investigação", "Medicina", "Natureza", "Religião"]
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+    } else if (this.classe === "Monge") {
+      const pericias = ["Acrobacia", "Atletismo", "Furtividade", "História", "Intuição", "Religião"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
+    } else if (this.classe === "Paladino") {
+      const pericias = ["Intimidação", "Atletismo", "Intuição", "Medicina", "Persuasão", "Religião"];
+
+      let pericias1 = pericias[Math.floor(Math.random() * pericias.length)];
+      let pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+
+      if (pericias1 === pericias2) {
+        pericias2 = pericias[Math.floor(Math.random() * pericias.length)];
+      }
+
+      this.pericias = `${pericias1}, ${pericias2}`;
     }
   }
 
@@ -272,22 +421,50 @@ export class NpcGeradorDnd {
   }
 
   private gerarClasse() {
-    const classes: string[] = [
-      "Bárbaro", "Bardo", "Clérigo", "Druida", "Feiticeiro",
-      "Guardião", "Guerreiro", "Ladino", "Mago", "Monge", "Paladino"
-    ]
+    if (this.forca > this.destreza && this.forca > this.constituicao && this.forca > this.inteligencia && this.forca > this.sabedoria && this.forca > this.carisma) {
+      const classesForca: string[] = ["Guerreiro", "Bárbaro", "Paladino"];
+      return this.classe = classesForca[Math.floor(Math.random() * classesForca.length)];
+    } else if (this.destreza > this.forca && this.destreza > this.constituicao && this.destreza > this.inteligencia && this.destreza > this.sabedoria && this.destreza > this.carisma) {
+      const classesDestreza: string[] = ["Guardião", "Guerreiro", "Ladino", "Monge"];
+      return this.classe = classesDestreza[Math.floor(Math.random() * classesDestreza.length)];
+    } else if (this.constituicao > this.forca && this.constituicao > this.destreza && this.constituicao > this.inteligencia && this.constituicao > this.sabedoria && this.constituicao > this.carisma) {
+      const classesConstituicao: string[] = ["Guerreiro", "Paladino"];
+      return this.classe = classesConstituicao[Math.floor(Math.random() * classesConstituicao.length)];
+    } else if (this.inteligencia > this.forca && this.inteligencia > this.destreza && this.inteligencia > this.constituicao && this.inteligencia > this.sabedoria && this.inteligencia > this.carisma) {
+      return this.classe = "Mago";
+    } else if (this.sabedoria > this.forca && this.sabedoria > this.destreza && this.sabedoria > this.constituicao && this.sabedoria > this.inteligencia && this.sabedoria > this.carisma) {
+      const classesSabedoria: string[] = ["Clerigo", "Druida", "Guardião", "Monge"];
+      return this.classe = classesSabedoria[Math.floor(Math.random() * classesSabedoria.length)];
+    } else if (this.carisma > this.forca && this.carisma > this.destreza && this.carisma > this.constituicao && this.carisma > this.inteligencia && this.carisma > this.sabedoria) {
+      const classesCarisma: string[] = ["Bardo", "Bruxo", "Clérigo", "Feiticeiro", "Paladino"];
+      return this.classe = classesCarisma[Math.floor(Math.random() * classesCarisma.length)];
+    } else {
+      const classesEmpate: string[] = ["Guerreiro", "Bárbaro", "Paladino", "Guardião", "Ladino", "Monge", "Mago", "Clerigo", "Druida", "Bardo", "Bruxo", "Feiticeiro"];
+      return this.classe = classesEmpate[Math.floor(Math.random() * classesEmpate.length)];
+    }
+  }
 
-    return this.classe = classes[Math.floor(Math.random() * classes.length)];
+  private calcularPontosDeVida() {
+    if (this.classe === "Bárbaro") {
+      this.pontosDeVida = 12 + this.bonusConstituicao;
+    } else if (this.classe === "Guardião" || this.classe === "Guerreiro" || this.classe === "Paladino") {
+      this.pontosDeVida = 10 + this.bonusConstituicao;
+    } else if (this.classe === "Bardo" || this.classe === "Bruxo" || this.classe === "Clérigo" || this.classe === "Druida" || this.classe === "Ladino" || this.classe === "Monge") {
+      this.pontosDeVida = 8 + this.bonusConstituicao;
+    } else if (this.classe === "Feiticeiro" || this.classe === "Mago") {
+      this.pontosDeVida = 6 + this.bonusConstituicao;
+    }
   }
 
   gerarNpc() {
     this.deletar = true;
     this.gerarAtributos();
-    this.gerarPericias();
     this.calculaTodosBonus();
     this.gerarNomes();
     this.gerarEspecies();
     this.gerarClasse();
+    this.calcularPontosDeVida();
+    this.gerarPericias();
   }
 
   deletarNpc() {
