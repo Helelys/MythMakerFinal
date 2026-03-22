@@ -1,23 +1,20 @@
-<div class="npcs-gerador">
-<button (click)="gerarNPC()">Gerar NPC</button>
-<button (click)="deletarNPC()">Deletar NPC</button>
+<section class="npcs-gerador">
+    <button (click)="gerarNPC()">Gerar NPC</button>
+    <button (click)="deletarNPC()">Deletar NPC</button>
+    <h2>NPC - Ordem Paranormal</h2>
 
-@if (mostrarAtributos) {
-<div class="npc-atributos">
-  <p>Nome: {{ nome }} {{ sobrenome }}</p>
-  <p>Idade: {{ idade }}</p>
-  
-  <div class="atributos">
-    <p>Força: {{ forca }}</p>
-    <p>Destreza: {{ destreza }}</p>
-    <p>Vigor: {{ vigor }}</p>
-    <p>Inteligência: {{ inteligencia }}</p>
-    <p>Presença: {{ presenca }}</p>
-  </div>
-  
-  <p>Perícias: {{pericia}}</p>
-  <p>Cargo: {{cargo}}</p>
-  <p>Personalidade: {{ personalidade }} e {{ personalidade2 }}</p>
-  </div>
-}
-</div>
+    @if (mostrarAtributos) {
+    <div class="missoes">
+        <p>Nome: {{ nome }} {{ sobrenome }}</p>
+        <p>Idade: {{ idade }}</p>
+        <p>Cargo: {{ cargo }}</p>
+        <p>Personalidade: {{ personalidade }}, {{ personalidade2 }}</p>
+        <p>Força: {{ forca }}</p>
+        <p>Destreza: {{ destreza }}</p>
+        <p>Vigor: {{ vigor }}</p>
+        <p>Inteligência: {{ inteligencia }}</p>
+        <p>Presença: {{ presenca }}</p>
+        <p>Perícia: {{ pericia }}</p>
+    </div>
+    }
+</section>
