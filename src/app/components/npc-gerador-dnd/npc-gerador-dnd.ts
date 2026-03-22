@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class NpcGeradorDnd {
 
+  nome: any;
+  especie: any;
   forca: any;
   destreza: any;
   constituicao: any
@@ -228,14 +230,58 @@ export class NpcGeradorDnd {
     this.calcularBonusCarisma();
    }
 
+   private gerarNomes() {
+    const nomes: string[] = [
+      "Aldric", "Baldwin", "Cedric", "Darian", "Edric",
+      "Fendrel", "Gareth", "Hadrian", "Isen", "Jareth",
+      "Kael", "Leoric", "Merrick", "Nerian", "Odrin",
+      "Percival", "Quint", "Roderic", "Soren", "Theron",
+      "Ulric", "Valen", "Wystan", "Xander", "Yorick",
+      "Alaric", "Berengar", "Cassian", "Dorian", "Emeric",
+      "Faelan", "Godric", "Hector", "Ivar", "Jorund",
+      "Kendric", "Lucan", "Magnus", "Niall", "Orin",
+      "Peregrin", "Quillon", "Rowan", "Stefan", "Tristan"
+      ];
+
+    const sobrenomesMedievais: string[] = [
+      "Blackwood", "Stormborn", "Ironfist", "Ravencrest", "Darkmoor",
+      "Silverhand", "Wolfbane", "Grimward", "Ashford", "Thornfield",
+      "Stonehelm", "Nightfall", "Duskryn", "Brightblade", "Frostborn",
+      "Oakenshield", "Redwyne", "Goldhart", "Shadowmere", "Emberfall",
+      "Hawthorne", "Drakewell", "Coldbrook", "Stormvale", "Ironwood",
+      "Mistbrook", "Falconer", "Wintermere", "Dawnhammer", "Ravenwood",
+      "Grimsbane", "Blackthorn", "Windrider", "Stormcloak", "Firebrand",
+      "Lightbringer", "Ashenford", "Deepwater", "Nightbreeze", "Stonegrave",
+      "Brightwood", "Darkwater", "Frostvale", "Emberstone", "Wildmere",
+      "Steelbane", "Moonfall", "Starwhisper", "Ironbane", "Dreadmoor"
+      ];
+
+    const nome = nomes[Math.floor(Math.random() * nomes.length)];
+    const sobrenome = sobrenomesMedievais[Math.floor(Math.random() * sobrenomesMedievais.length)];
+    return this.nome = `${nome} ${sobrenome}`;
+   }
+
+   private gerarEspecies() {
+    const especies: string[] = [
+      "Aasimar", "Anão", "Draconato", "Elfo", "Gnomo",
+      "Golias", "Humano", "Orc", "Meio-Elfo", "Meio-Orc", "Tiefling",
+    ]
+
+    return this.especie = especies[Math.floor(Math.random() * especies.length)];
+   }
+
   gerarNpc() {
     this.deletar = true;
     this.gerarAtributos();
     this.gerarPericias();
     this.calculaTodosBonus();
+    this.gerarNomes();
+    this.gerarEspecies();
   }
 
   deletarNpc() {
     this.deletar = false;
   }
+
+  
 }
